@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARTE | Luxury Women's Dresses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* --- Reset and Global Styles --- */
+        :root {
+            --primary-color: #000; /* Deep black background */
+            --secondary-color: #eaeaea; /* Light grey text/accents */
+            --accent-color: #c9a06e;   /* Muted Gold - antique gold color */
+            --logo-gold: #d4af37;       /* Prominent Golden color for the logo */
+            --serif-font: 'Playfair Display', serif;
+            --sans-font: 'Montserrat', sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h1, h2, h3, .brand-title {
+            font-family: var(--serif-font);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Global Class Modifiers --- */
+        .muted-gold-text {
+            color: var(--accent-color);
+        }
+
+        .spacer {
+            height: 100px; /* Spacer class for consistent vertical rhythm */
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Dark backdrop */
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid #111; /* Subtle dark border */
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-title {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            color: var(--logo-gold); /* Prominent golden color for the logo */
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--secondary-color); /* Light grey text for links */
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color); /* Hover to muted gold */
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            margin-top: 100px; /* Offset for fixed header */
+        }
+
+        .hero-image {
+            /* Placeholder for signature image, like the gold dress in image_68.png */
+            /* Setting a background as placeholder, adapted for black theme. */
+            background-image: url("path_to_image_68.png_or_similar_signature_gold_dress.jpg");
+            background-size: cover;
+            background-position: center top;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: brightness(0.8) contrast(1.1); /* Adjusted for dramatic black theme */
+        }
+
+        .hero-content {
+            background-color: transparent; /* Sitting directly on the black */
+            padding: 40px;
+            border-radius: 5px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            color: var(--secondary-color); /* All h1 light */
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-transform: lowercase;
+            font-style: italic;
+            color: var(--secondary-color); /* Paragraphs light */
+        }
+
+        /* --- The Collection Section --- */
+        .collection {
+            padding: 100px 0;
+            background-color: var(--primary-color);
+        }
+
+        .collection h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .dress-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .dress-card {
+            background-color: #111; /* Dark grey-black cards */
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--accent-color); /* Accent gold border */
+        }
+
+        .dress-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dress-card-img {
+            width: 100%;
+            height: 400px; /* Consistent image height */
+            background-color: #222; /* Placeholder background */
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Consistent mannequin placement */
+            position: relative;
+        }
+
+        .dress-card-img img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            position: absolute; /* Ensures centering */
+            bottom: 0;
+        }
+
+        .dress-card-img-placeholder::after {
+            content: "signature gold dress (placeholder: image_68.png)";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: lowercase;
+            font-style: italic;
+            display: block;
+        }
+
+        .dress-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color); /* Light name */
+            margin-bottom: 10px;
+            text-transform: lowercase;
+        }
+
+        .dress-price {
+            font-size: 1rem;
+            color: var(--accent-color); /* Muted gold price */
+            font-weight: 400;
+        }
+
+        /* --- Our Story Section --- */
+        .story {
+            padding: 100px 0;
+            background-color: var(--primary-color); /* Entire story is black */
+            color: #eaeaea;
+            text-align: center;
+        }
+
+        .story-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .story p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #eaeaea;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .appointment-text {
+            font-family: var(--serif-font);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .contact-details {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            line-height: 2;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 40px 0;
+            background-color: #111; /* Very dark grey differential footer */
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            font-size: 0.9rem;
+            text-transform: lowercase;
+            color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #eaeaea;
+        }
+
+        /* --- Responsive Styles (Mobile) --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .brand-title {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav ul li a {
+                font-size: 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .dress-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+                gap: 30px;
+            }
+
+            .dress-card-img {
+                height: 350px;
+            }
+
+            .spacer {
+                height: 60px;
+            }
+
+            .appointment-text {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1 class="brand-title">SARTE</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-image"></div>
+        <div class="container hero-content">
+            <h1>Modern <span class="muted-gold-text">Elegance</span>, Redefined.</h1>
+            <p>an exclusive world of minimalist luxury, crafted for the modern woman who values timeless grace. SARTE presents women's dresses, perfected.</p>
+        </div>
+    </section>
+
+    <section id="collection" class="collection container">
+        <h2>The Collection</h2>
+        <div class="dress-grid">
+            
+            <div class="dress-card">
+                <div class="dress-card-img dress-card-img-placeholder">
+                    </div>
+                <h3 class="dress-name">Signature <span class="muted-gold-text">Gold</span> Gown</h3>
+                <p class="dress-price">Luxury Pricing: Enquiry Only</p>
+            </div>
+
+            <div class="dress-card">
+                <div class="dress-card-img dress-card-img-placeholder">
+                    </div>
+                <h3 class="dress-name">Midi Silk Gown</h3>
+                <p class="dress-price">Consultation Pricing</p>
+            </div>
+
+            <div class="dress-card">
+                <div class="dress-card-img dress-card-img-placeholder">
+                    </div>
+                <h3 class="dress-name">Embellished Cocktail Dress</h3>
+                <p class="dress-price">Consultation Pricing</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <section id="story" class="story">
+        <div class="container story-container">
+            <h2>Our Story</h2>
+            <p>SARTE was founded on a simple, singular obsession: the craft of the perfect women's dress. Modern architecture, minimalism, and timeless grace inspire our designs. </p>
+            <p>We work exclusively with women's dresses, perfected for the discerning individual.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact container">
+        <h2>Consultation</h2>
+        <p class="appointment-text">Our services are provided <span class="muted-gold-text">By Appointment</span> and only for select pieces.</p>
+        <div class="contact-details">
+            <p>For custom consultations and collection inquiries, please contact our private concierge.</p>
+            <p>SARTE.fashion@outlook.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Pintrest</a>
+                <a href="#">Concierge Private Line</a>
+            </div>
+            <p class="copyright">© SARTE. Modern Elegance, Redefined.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                    // This creates a sophisticated single-page flow
+                });
+            });
+        });
+    </script>
+</body>
+</html>
